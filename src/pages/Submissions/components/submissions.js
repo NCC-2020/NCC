@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./submissions.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 class Table extends Component {
@@ -13,7 +14,11 @@ class Table extends Component {
         { SrNo: 5, time: "15", ss: "51", status: 50, response: "-" },
         { SrNo: 6, time: "23", ss: "32", status: 70, response: "-" },
         { SrNo: 7, time: "12", ss: "35", status: 80, response: "-" },
-        { SrNo: 8, time: "34", ss: "38", status: 90, response: "-" }
+        { SrNo: 8, time: "34", ss: "38", status: 90, response: "-" },
+        { SrNo: 9, time: "34", ss: "38", status: 90, response: "-" },
+        { SrNo: 10, time: "34", ss: "38", status: 90, response: "-" },
+        { SrNo: 11, time: "34", ss: "38", status: 90, response: "-" },
+        { SrNo: 12, time: "34", ss: "38", status: 90, response: "-" }
       ]
     };
   }
@@ -64,7 +69,7 @@ class Table extends Component {
           </td>
           <td>
             <center>
-              <div className="progress">
+              <div className="progress" style={{height: "25px"}}>
                 <div
                   className={"progress-bar progress-bar-striped bg-" + rate}
                   role="progressbar"
@@ -80,7 +85,7 @@ class Table extends Component {
           </td>
           <td>
             <center>
-              <button className="btn btn-primary" href="{response}">
+              <button className="btn btn-primary btn-sm" href="{response}">
                 View
               </button>
             </center>
@@ -92,11 +97,10 @@ class Table extends Component {
 
   render() {
     return (
-      <div>
+      <div className="tablediv" style={{maxHeight: "75vh", paddingTop: "4vh", marginTop: "10vh", overflow: "auto"}} id="style-3">
         <table
           id="students"
-          className="table table-striped table-primary"
-          style={{ marginTop: "10vh" }}
+          className="table table-striped table-dark table-hover"
         >
           <tbody>
             <tr>{this.renderTableHeader()}</tr>
@@ -109,5 +113,6 @@ class Table extends Component {
 }
 
 //ReactDOM.render(<Table />, document.getElementById('root'));
+//className="overflow-auto"
 
 export default Table;
